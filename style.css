@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text1: rgb(255, 255, 255);
+  --text2: rgb(255, 255, 255);
+  /**/
+  --input1: rgb(255, 255, 255);
+  --input2: rgb(255, 255, 255);
+  /**/
+  --header: rgb(255, 255, 255);
+  --background: rgb(255, 255, 255);
+  /**/
+  --row1: rgb(255, 255, 255);
+  --row2: rgb(255, 255, 255);
+}
+
+.title1 {
+}
+.title2 {
+}
