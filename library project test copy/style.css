@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+:root {
+  --row1 : rgb(200, 200, 200);
+  --row2 : rgb(220, 220, 220);
+  --header : rgb(65, 70, 174);
+  --titleText : rgba(240, 248, 255, 0.9);
+  --buttons : rgb(87, 92, 197);
+  --buttonText : rgba(240, 248, 255, 0.9);
+  --text1: rgb(255, 255, 255);
+  --text2: rgb(255, 255, 255);
+  
+  --input1: rgb(255, 255, 255);
+  --input2: rgb(255, 255, 255);
+  
+  --header: rgb(255, 255, 255);
+  --background: rgb(255, 255, 255);
+  
+  --row1: rgb(255, 255, 255);
+  --row2: rgb(255, 255, 255);
+}
+
+.header1 {
+  background-image: linear-gradient( to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) ), 
+  url("https://cdn.pixabay.com/photo/2016/06/01/06/26/open-book-1428428_1280.jpg");
+  box-shadow: inset 0px -2px 3px rgba(0, 0, 0, 0.20);
+  background-size: cover;
+  background-position: center;
+  
+  padding-bottom: 20px;
+  width: 100%;
+  height: 250px;
+  
+}
+
+.text1 {
+  padding: 90px;
+  line-height: 0.8;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+h3 {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.button_text {
+  font-size: 15px;
+  text-align: center;
+}
+.button_look {
+  background-color: darkcyan;
+  border-style: hidden;
+  width: 160px;
+  height: 45px;
+}
+
+.button_location {
+  
+  padding-left: 90px;
+}
+
+.mouseover:hover {
+  background-color: darkslategray;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  box-shadow: inset 0px -2px 3px rgba(0, 0, 0, 0.20);
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  
+}
+
+.navbar-logo {
+  font-size: 40px;
+  color: dodgerblue;
+}
+.navbar-logo:hover {
+  cursor: pointer;
+  display: block;
+  transform: scale(1.05);
+}
+.navbar-logo-text {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 35px;
+
+  color: black;
+  text-decoration: none;
+}
+
+
+.navbar-links {
+  background-image: linear-gradient( to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) ), 
+  url("https://as2.ftcdn.net/v2/jpg/04/92/24/55/1000_F_492245515_B06u4GqjtSox45R7iDOCLIamWIJipzFT.jpg");
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  background-size: cover;
+  
+}
+.navbar-links a {
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+.navbar-links a:hover {
+  color: gray;
+}
+
+.navbar-button {
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 4px;
+  padding: 12px 16px;
+  cursor: pointer;
+}.navbar-button:hover{
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.navbar-button span {
+  font-weight: bold;
+  margin-left: 6px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+.navbar-button-logo {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+/*------------*/
+
+/*-Hero-*/
+
+.hero {
+  background-image: linear-gradient( to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) ), 
+  url("https://cdn.pixabay.com/photo/2016/06/01/06/26/open-book-1428428_1280.jpg");
+  box-shadow: inset 0px -2px 3px rgba(0, 0, 0, 0.20);
+  background-size: cover;
+  background-position: center;
+  
+  padding-bottom: 20px;
+  width: 100%;
+  height: 250px;
+  
+}
+
+.hero-text {
+  color: white;
+  padding-left: 20px;
+  text-decoration-style: solid;
+  text-decoration-thickness: 4px;
+  text-decoration-color: black;
+}
+.hero-text h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  line-height: 50px;
+  font-size: 45px;
+}
+.hero-text h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  line-height: 25px;
+  
+}
+
+.newEntry {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  display: flex;
+  background-color: var(--header);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+
+}
+.title {
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  color: var(--titleText);
+}
+
+.toDoList {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry {
+  height: 30px;
+}
+
+.expenses {
+  width: 90%;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.expenses > div:nth-child(even) {
+  background-color: var(--row1);
+}
+
+.row-head, .row-body, .row-footer {
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 12px 24px;
+  margin: 6px 0;
+}
+
+.addItemSubText {
+  font-size: 20px;
+}
+input {
+  background-color: rgb(188, 184, 184);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  
+  margin-left: 24px;
+}
+
+.row-head {
+  background-color: transparent;
+}
+.row-footer {
+  font-weight: bold;
+}
+
+/*.modal {
+  background-color: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}*/
+
+.modal .content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#close {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  font-weight: bold;
+  color: var(--blue);
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/*------------*/
+
