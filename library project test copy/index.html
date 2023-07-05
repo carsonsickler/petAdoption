@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Oswald:wght@200;300;500&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue App</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="icofont.min.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div id="app">
+
+    <!--Navbar-->
+    <nav class="navbar">
+
+      <div class="navbar-links">
+          <a class="logo" href="./index.html"></a>
+      </div>
+
+      <div class="navbar-logo">
+          <i class="icofont-folder-open"></i>
+          <a class="navbar-logo-text" href="index.html">Book Library</a>
+      </div>
+
+      
+
+      <div href="applications.html" class="navbar-button">
+          <a class="icofont-eye navbar-button-logo" href="applications.html">Applications</a>
+      </div>
+
+    </nav>
+  <!---->
+<!--HERO -->
+  <div class="header1">
+      <div class="text1">
+          <h1>Find the Perfect</h1>
+          <h1>Book for You</h1>
+          <br>
+          <h3>Discover a highly curated roster of</h3>
+          <h3>Books written by many notible authors.</h3>
+
+        </div>
+    </div> 
+  </div>
+  <!---->
+  
+  <div class="toDoList">
+    <div class="header">
+        <div class="title">
+            <h1>Expense Manager</h1>
+        </div>
+    </div>
+
+    <h2>Add Expense</h2>
+    <br>
+    <form class="newEntry" @submit.prevent="addExpense()">
+        <label>
+            <span class="addItemSubText">Title</span>
+            <input type="text" v-model="newExpense.title">
+        </label>
+        <label>
+            <span class="addItemSubText">Description</span>
+            <input type="text" v-model="newExpense.description">
+        </label>
+        <label>
+            <span class="addItemSubText">Amount</span>
+            <input type="number" v-model="newExpense.amount">
+        </label>
+        <label>
+            <span class="addItemSubText">Creator</span>
+            <input type="text" v-model="newExpense.creator">
+        </label>
+        <label>
+            <span class="addItemSubText">Date</span>
+            <input type="text" v-model="newExpense.date">
+        </label>
+        <button>Add New</button>
+    </form>
+
+    <div class="modal" v-show="modalOpen">
+        <div class="content">
+            <div id="close" @click="toggleModal()">X</div>
+            <p class="addItemSubText">Expense Title</p>
+            <input v-model="modal.title" type="text" placeholder="Enter title">
+
+            <p class="addItemSubText">Expense Description</p>
+            <input v-model="modal.description" type="text" placeholder="Enter description">
+
+            <p class="addItemSubText">Expense Amount</p>
+            <input v-model="modal.amount" type="number" placeholder="Enter amount">
+
+            <p class="addItemSubText">Expense Creator</p>
+            <input v-model="modal.creator" type="text" placeholder="Enter creator">
+
+            <p class="addItemSubText">Expense Date</p>
+            <input v-model="modal.date" type="text" placeholder="Enter date">
+
+            <button class="addButton" @click="updateExpense()">Save</button>
+            
+        </div>
+        
+    </div>
+
+    <span @submit.prevent="search">
+        <input placeholder="Search..." class="searchBox" v-model="search">
+        <p class="searchSubText">Sort By Category</p>
+        <button @click="resetSearch()" type="submit">Search</button>
+    </span>
+    
+    
+    <br>
+
+    <div class="expenses">
+        <div class="row-head">
+            <div>Title</div>
+            <div>Description</div>
+            <div>Amount</div>
+            <div>Creator</div>
+            <div>Date</div>
+            <div></div>
+        </div>
+
+        <div v-for="exp in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
+            <div>{{exp.title}}</div>
+            <div>{{exp.description}}</div>
+            <div>{{exp.amount}}</div>
+            <div>{{exp.creator}}</div>
+            <div>{{exp.date}}</div>
+            <button @click="toggleModal(index)">Edit</button>
+            <button @click="removeRow(index)">Delete</button>
+        </div>
+
+        <div v-for="(exp, index) in expenses" class="row-body" v-else="">
+            <div>{{exp.title}}</div>
+            <div>{{exp.description}}</div>
+            <div>{{exp.amount}}</div>
+            <div>{{exp.creator}}</div>
+            <div>{{exp.date}}</div>
+            <button @click="toggleModal(index)">Edit</button>
+            <button @click="deleteExpense(index)">Delete</button>
+        </div>
+
+        <div class="row-footer">
+            <div>TOTAL</div>
+            
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    
+
+    
+    
+  </div>
+
+    <script src="app.js"></script>
+  </body>
+
+</html>
